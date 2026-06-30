@@ -1,5 +1,4 @@
-﻿
-@model About
+﻿@model About
 @{
     ViewData["Title"] = "Hakkımda";
     Layout = "~/Views/AdminLayout/Layout.cshtml";
@@ -8,7 +7,7 @@
 
 <section class="col-span-12 lg:col-span-12">
 
-    @if(Model != null)
+    @if (Model != null)
     {
         <div class="bg-surface-container-lowest border border-outline-variant rounded-xl custom-shadow overflow-hidden">
             <div class="px-lg py-md border-b border-outline-variant flex justify-between items-center">
@@ -46,12 +45,12 @@
 
                             <td class="px-lg py-md text-right">
                                 <div class="flex justify-end gap-sm">
-                                    <button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-md transition-all">
+                                    <a class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-md transition-all" href="/About/UpdateAbout/@Model.Id">
                                         <span class="material-symbols-outlined text-[20px]">edit</span>
-                                    </button>
-                                    <button class="p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/20 rounded-md transition-all">
+                                    </a>
+                                    <a class="p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/20 rounded-md transition-all" href="/About/DeleteAbout/@Model.Id" onclick="return confirm('Silmek İstediğinize Emin Misiniz?')">
                                         <span class="material-symbols-outlined text-[20px]">delete</span>
-                                    </button>
+                                    </a>
                                 </div>
                             </td>
                         </tr>
@@ -78,12 +77,7 @@
     else
     {
         <div class="alert alert-info"><strong>Henüz Hakkımızda Bilgisi Eklenmemiş</strong></div>
-
         <br />
-
         <a class="btn btn-outline-dark" href="/About/CreateAbout">Yeni Hakkımda Ekle</a>
     }
-
-
-    
 </section>
