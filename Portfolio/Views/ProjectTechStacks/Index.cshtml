@@ -1,0 +1,35 @@
+﻿@model IEnumerable<IGrouping<string, ProjectTechStack>>
+@{
+    ViewData["Title"] = "Proje Teknolojileri";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+    int count = 0;
+}
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Proje Adı</th>
+        <th>Kullanılan Teknolojiler</th>
+        <th>İşlem</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.Key</td>
+            <td>@string.Join(", ", item.OrderBy(x => x.TechStack.Name).Select(x => x.TechStack.Name))</td>
+
+            <td>
+                <a href="/ProjectTechStacks/Manage/@item.First().ProjectId"
+                   class="btn btn-outline-primary btn-sm">
+                    Yönet
+                </a>
+            </td>
+        </tr>
+
+    }
+</table>
+
+<a class="btn btn-outline-dark" href="/ProjectTechStacks/Create">Yeni Giriş</a>
