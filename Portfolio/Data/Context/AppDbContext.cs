@@ -21,5 +21,7 @@ namespace Portfolio.Data.Context
         public DbSet<TechStack> TechStacks { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<ProjectTechStack> ProjectTechStacks { get; set; }
+        public DbSet<UserMessage> UserMessages { get; set; }
+        public DbSet<Admin> Admins { get; set; }
     }
 }
