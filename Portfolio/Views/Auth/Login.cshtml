@@ -1,0 +1,35 @@
+﻿@model LoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="col-8 text-center card">
+            <h4 class="card-title">Giriş Formu</h4>
+            <div class="card-body">
+                <form method="post">
+                    <label>Kullanıcı Adı</label>
+                    <input type="text" asp-for="UserName" class="form-control" />
+                    <span class="text-danger" asp-validation-for="UserName"></span>
+                    <br />
+                    <label>Şifre</label>
+                    <input type="password" asp-for="Password" class="form-control" />
+                    <span class="text-danger" asp-validation-for="Password"></span>
+                    <br />
+                    <span class="text-danger">@Html.ValidationSummary(excludePropertyErrors:true)</span>
+                    <button class="btn btn-outline-dark">Giriş Yap</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
