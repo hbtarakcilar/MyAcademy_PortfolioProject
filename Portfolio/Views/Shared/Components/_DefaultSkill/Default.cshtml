@@ -1,0 +1,14 @@
+﻿@model List<Skill>
+@*
+    Default Skill
+*@
+
+
+<div class="text-center">
+    <h3 class="mb-2 text-primary">Yetenekler</h3>
+
+    <p class="font-body-md text-body-md text-on-surface-variant">
+        @string.Join(", ", Model.Select(x => x.Name))
+    </p>
+</div>
+

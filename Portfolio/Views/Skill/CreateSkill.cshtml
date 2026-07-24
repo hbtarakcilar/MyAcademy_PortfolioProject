@@ -1,0 +1,13 @@
+﻿@model Skill
+@{
+    ViewData["Title"] = "Yeni Yetenek Ekle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<form method="post">
+    <label>Yetenek Adı</label>
+    <input type="text" class="form-control" asp-for="Name" />
+    <span class="text-danger" asp-validation-for="Name"></span>
+    <br />
+    <button class="btn btn-outline-dark">Kaydet</button>
+</form>
